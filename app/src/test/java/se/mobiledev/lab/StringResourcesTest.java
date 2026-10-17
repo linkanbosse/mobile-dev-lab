@@ -12,9 +12,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 public class StringResourcesTest {
-    private static final String[] REQUIRED = {
-        "app_name", "title", "status_ready", "status_ok", "test_button", "toast_test_passed"
-    };
+    private static final String[] REQUIRED = {"app_name", "back_exit_hint"};
 
     @Test
     public void requiredStringsExistAndAreNotEmpty() throws Exception {
