@@ -7,3 +7,11 @@ updates:
     groups:
       github-actions:
         patterns: ["*"]
+
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      gradle:
+        patterns: ["*"]
