@@ -5,12 +5,13 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="28dp"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MOBILE DEV LAB"
+        android:text="@string/title"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@color/primary"/>
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="24dp"
-        android:text="Din utvecklingsstation är redo."
+        android:text="@string/status_ready"
         android:textSize="17sp"
         android:textColor="@color/text"/>
 
@@ -29,5 +30,5 @@
         android:id="@+id/testButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Testa appen"/>
+        android:text="@string/test_button"/>
 </LinearLayout>
