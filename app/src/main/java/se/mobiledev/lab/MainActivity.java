@@ -16,10 +16,10 @@ public class MainActivity extends Activity {
         Button button = findViewById(R.id.testButton);
 
         button.setOnClickListener(v -> {
-            status.setText("Allt fungerar!");
+            status.setText(R.string.status_ok);
             Toast.makeText(
                 this,
-                "Android-test godkänt",
+                R.string.toast_test_passed,
                 Toast.LENGTH_SHORT
             ).show();
         });
