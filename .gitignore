@@ -3,11 +3,6 @@
 build/
 local.properties
 
-# Generated wrapper (created in CI)
-gradlew
-gradlew.bat
-gradle/wrapper/
-
 # IDE
 .idea/
 *.iml

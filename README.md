@@ -11,7 +11,7 @@ A minimal native Android app (Java + XML) built entirely in the cloud with GitHu
 Every push to `main` (or a manual run via **Actions → Android APK Build → Run workflow**) will:
 
 1. Install the Android SDK components (platform 36, build-tools 36.0.0).
-2. Generate the Gradle wrapper (it is not committed).
+2. Validate the committed Gradle wrapper (done by `setup-gradle`).
 3. Run `lintDebug` and `testDebugUnitTest`.
 4. Build `assembleDebug`.
 
