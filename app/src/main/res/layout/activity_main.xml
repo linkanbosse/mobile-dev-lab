@@ -1,0 +1,33 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="28dp"
+    android:background="@color/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MOBILE DEV LAB"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"/>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp"
+        android:text="Din utvecklingsstation är redo."
+        android:textSize="17sp"
+        android:textColor="@color/text"/>
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Testa appen"/>
+</LinearLayout>
