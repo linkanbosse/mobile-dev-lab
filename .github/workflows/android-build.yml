@@ -35,15 +35,15 @@ jobs:
           "$SDKMANAGER" --install \
             "platform-tools" \
             "platforms;android-35" \
-            "build-tools;35.0.0"
+            "build-tools;36.0.0"
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
         with:
-          gradle-version: '8.9'
+          gradle-version: '9.8.1'
 
       - name: Generate Gradle wrapper
-        run: gradle wrapper --gradle-version 8.9 --distribution-type bin
+        run: gradle wrapper --gradle-version 9.8.1 --distribution-type bin
 
       - name: Lint and unit tests
         run: ./gradlew --no-daemon lintDebug testDebugUnitTest
