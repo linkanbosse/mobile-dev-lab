@@ -34,8 +34,25 @@ ecosystem:
 - **gradle**: updates the Android Gradle Plugin, library dependencies and the
   committed Gradle wrapper.
 
-Each Dependabot PR is built by the workflow above, so check that it passes
-before merging.
+Each Dependabot PR is built by the workflow above and can only be merged once
+it passes (see below).
+
+## Branch protection
+
+`main` is protected, and the rule applies to admins too:
+
+- The `build` check must pass before a PR can be merged.
+- Direct pushes, force pushes and deleting `main` are blocked.
+
+Every change therefore goes through a pull request:
+
+```
+git switch -c my-change
+# edit, commit
+git push -u origin my-change
+gh pr create --fill
+gh pr merge --squash --delete-branch   # once build is green
+```
 
 ## Download the APK
 
