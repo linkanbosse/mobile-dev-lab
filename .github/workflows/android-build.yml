@@ -41,7 +41,7 @@ jobs:
           (yes || true) | "$SDKMANAGER" --licenses > /dev/null
           "$SDKMANAGER" --install \
             "platform-tools" \
-            "platforms;android-35" \
+            "platforms;android-36" \
             "build-tools;36.0.0"
 
       - name: Set up Gradle
