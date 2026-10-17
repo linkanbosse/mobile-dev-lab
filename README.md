@@ -1,6 +1,7 @@
 # mobile-dev-lab
 
-A minimal native Android app (Java + XML) built entirely in the cloud with GitHub Actions.
+Nalle Blaster, an HTML5 game wrapped in a native Android app (Java + XML + WebView),
+built entirely in the cloud with GitHub Actions. The game runs fully offline from the APK.
 
 - Package: `se.mobiledev.lab`
 - minSdk 23, targetSdk/compileSdk 36
@@ -54,6 +55,14 @@ gh pr create --fill
 gh pr merge --squash --delete-branch   # once build is green
 ```
 
+## How the game is hosted
+
+`MainActivity` serves the assets from `https://appassets.androidplatform.net/` through
+`shouldInterceptRequest`, which gives `localStorage` (the game's save) a stable origin.
+The app has no INTERNET permission and no JavaScript interface; requests to other hosts are
+blocked, and the Google Fonts stylesheet requested by `index.html` is answered with the
+bundled `fonts/fredoka.css`.
+
 ## Download the APK
 
 Open the latest successful workflow run under **Actions** and download the
@@ -63,7 +72,9 @@ signed with the default debug key.
 ## Project layout
 
 ```
-app/src/main/java/se/mobiledev/lab/MainActivity.java   UI logic
+app/src/main/java/se/mobiledev/lab/MainActivity.java   WebView host, immersive mode, back handling
+app/src/main/assets/index.html                        the game (unmodified)
+app/src/main/assets/fonts/                            bundled Fredoka font (SIL OFL) replacing Google Fonts
 app/src/main/res/                                     layouts, strings, colors, theme
 app/src/test/java/se/mobiledev/lab/                   JUnit tests
 .github/workflows/android-build.yml                    CI build

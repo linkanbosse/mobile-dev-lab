@@ -1,34 +1,7 @@
-<LinearLayout
+<WebView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gameView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="28dp"
     android:background="@color/background"
-    android:fitsSystemWindows="true">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary"/>
-
-    <TextView
-        android:id="@+id/statusText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/status_ready"
-        android:textSize="17sp"
-        android:textColor="@color/text"/>
-
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/test_button"/>
-</LinearLayout>
+    android:keepScreenOn="true"/>

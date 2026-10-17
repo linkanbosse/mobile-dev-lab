@@ -1,8 +1,4 @@
 <resources>
-    <string name="app_name">Mobile Dev Lab</string>
-    <string name="title">MOBILE DEV LAB</string>
-    <string name="status_ready">Din utvecklingsstation är redo.</string>
-    <string name="status_ok">Allt fungerar!</string>
-    <string name="test_button">Testa appen</string>
-    <string name="toast_test_passed">Android-test godkänt</string>
+    <string name="app_name">Nalle Blaster</string>
+    <string name="back_exit_hint">Tryck bakåt igen för att avsluta</string>
 </resources>
