@@ -230,6 +230,33 @@ button:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .codemsg.ok{color:#3f8a24}.codemsg.err{color:#c0392b}
 @media (max-height:740px){.tool{width:54px;height:47px}.tool .e{font-size:18px}.tool .t{font-size:11px}.tool.big{width:58px;height:54px}.col{gap:7px}}
 @media (prefers-reduced-motion: reduce){.dot.show,.modal,.card.bump{animation:none}}
+
+/* Nalle Blaster polish pass 2026-10-17.
+   Visual-only overrides: preserve game logic, progression and save data. */
+button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button:focus-visible{outline:3px solid #fff;outline-offset:3px;filter:drop-shadow(0 0 3px rgba(255,207,69,.95))}
+.roundbtn{transition:transform .12s ease,filter .12s ease,box-shadow .12s ease}
+.roundbtn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink);filter:brightness(1.08)}
+.tool{box-shadow:0 4px 0 var(--ink),0 5px 10px rgba(35,24,12,.18);transition:transform .12s ease,filter .12s ease,box-shadow .12s ease}
+.tool:active{transform:translateY(2px) scale(.98);box-shadow:0 1px 0 var(--ink);filter:brightness(1.08)}
+.tool .t{line-height:1.05;text-wrap:balance}
+.pill{box-shadow:0 2px 0 rgba(58,40,20,.35)}
+#hudTop{z-index:20}
+#leftCol,#rightCol{z-index:18}
+#combo{z-index:17}
+@media (max-width:390px){
+  #hudTop{gap:5px;padding-left:max(7px,env(safe-area-inset-left,0px));padding-right:max(7px,env(safe-area-inset-right,0px))}
+  .roundbtn{width:36px;height:36px}
+  #track{width:min(210px,100%)}
+  #stageLabel{font-size:15px}
+  .tool{width:54px}
+  .tool .e{font-size:20px}
+  .tool .t{font-size:11px}
+}
+@media (prefers-reduced-motion:reduce){
+  .roundbtn,.tool{transition:none}
+}
+
 </style>
 
 <div id="app">
