@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowInsets;
@@ -84,10 +85,14 @@ public class MainActivity extends Activity {
         webView.loadUrl(START_URL);
     }
 
+    // Before API 33 there is no OnBackInvokedCallback, so handle the key directly.
     @Override
-    @SuppressWarnings("deprecation")
-    public void onBackPressed() {
-        handleBack();
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && Build.VERSION.SDK_INT < 33) {
+            handleBack();
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
     }
 
     private void handleBack() {
