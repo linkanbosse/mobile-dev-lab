@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+local.properties
+
+# Generated wrapper (created in CI)
+gradlew
+gradlew.bat
+gradle/wrapper/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Signing keys and secrets
+*.jks
+*.keystore
+keystore.properties
