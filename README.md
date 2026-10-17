@@ -8,12 +8,34 @@ A minimal native Android app (Java + XML) built entirely in the cloud with GitHu
 
 ## Build
 
-Every push to `main` (or a manual run via **Actions → Android APK Build → Run workflow**) will:
+The workflow runs on every push to `main`, on every pull request into `main`,
+and on manual runs via **Actions → Android APK Build → Run workflow**. Each run will:
 
 1. Install the Android SDK components (platform 36, build-tools 36.0.0).
 2. Validate the committed Gradle wrapper (done by `setup-gradle`).
 3. Run `lintDebug` and `testDebugUnitTest`.
 4. Build `assembleDebug`.
+
+Manual runs accept a `warning_mode` input (`summary`, `all`, `fail`, `none`)
+that is passed to Gradle's `--warning-mode`, e.g.:
+
+```
+gh workflow run android-build.yml -f warning_mode=all
+```
+
+All actions are pinned to full commit SHAs, with the version in a comment.
+
+## Dependency updates
+
+Dependabot (`.github/dependabot.yml`) checks weekly and opens one grouped PR per
+ecosystem:
+
+- **github-actions**: updates the pinned SHAs and their version comments.
+- **gradle**: updates the Android Gradle Plugin, library dependencies and the
+  committed Gradle wrapper.
+
+Each Dependabot PR is built by the workflow above, so check that it passes
+before merging.
 
 ## Download the APK
 
@@ -28,6 +50,8 @@ app/src/main/java/se/mobiledev/lab/MainActivity.java   UI logic
 app/src/main/res/                                     layouts, strings, colors, theme
 app/src/test/java/se/mobiledev/lab/                   JUnit tests
 .github/workflows/android-build.yml                    CI build
+.github/dependabot.yml                                 dependency updates
+gradle/wrapper/                                        committed Gradle wrapper
 ```
 
 Never commit keystores, passwords or tokens. `.gitignore` excludes `*.jks`,
